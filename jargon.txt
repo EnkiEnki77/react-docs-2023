@@ -1,0 +1,10 @@
+imperative programming -
+
+declarative programming -
+
+expressions - 
+
+statements - 
+
+execution context - 
+
