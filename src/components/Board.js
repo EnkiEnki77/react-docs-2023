@@ -3,6 +3,7 @@ import Square from "./Square";
 
 export default function Board({squares, xIsNext, onPlay}) {
   var status;
+  var rowsAndSquares = [squares.slice(0, 3), squares.slice(3, 6), squares.slice(6, 9)]
 
   {let winner = calculateWinner(squares)
 
@@ -52,31 +53,23 @@ export default function Board({squares, xIsNext, onPlay}) {
     return null;
   }
   
+ 
   return (
     <>
       <div>{status}</div>
-      
-      <div className="board-row">
-        {squares.slice(0, 3).map((square, i, arr) => {
-            console.log(i)
-            return <Square key={i} value={square} onSquareClick={() => handleClick(i)} />
-          })
-        }
-      </div>
-      <div className="board-row">
-        {squares.slice(3, 6).map((square, i, arr) => {
-          console.log(i + 3)
-            return <Square key={i + 3} value={square} onSquareClick={() => handleClick(i + 3)} />
-          })
-        }
-      </div>
-      <div className="board-row">
-        {squares.slice(6, 9).map((square, i, arr) => {
-          console.log(i + 6)
-            return <Square key={i + 6} value={square} onSquareClick={() => handleClick(i + 6)} />
-          })
-        }
-      </div>
+      {
+        rowsAndSquares.map((row, i, arr) => {
+          return (
+            <div key={i} className="board-row">
+              {row.map((square, j, arr) => {
+                  let index = i === 2 ? j + 6 : i === 1 ? j + 3 : j
+                  return <Square key={index} value={square} onSquareClick={() => handleClick(index)} />
+                })
+              }
+            </div>
+          )
+        })
+      }
     </>
   );
 }
