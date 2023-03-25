@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 
-function Square({value, onSquareClick}) {
+function Square({value, onSquareClick, winner}) {
+
+  console.log(winner)
 
   return (
-    <button onClick={onSquareClick} className='square'>{value}</button>
+    <button style={{color: winner ? 'blue' : 'black' }} onClick={onSquareClick} className='square'>{value}</button>
   )
 }
 

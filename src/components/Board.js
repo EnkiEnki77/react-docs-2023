@@ -3,12 +3,14 @@ import Square from "./Square";
 
 export default function Board({squares, xIsNext, onPlay}) {
   var status;
+  var winnerLine;
   var rowsAndSquares = [squares.slice(0, 3), squares.slice(3, 6), squares.slice(6, 9)]
 
   {let winner = calculateWinner(squares)
 
     if(winner != null){
-      status = `Winner: ${winner}`
+      status = `Winner: ${winner[0]}`
+      winnerLine = winner[1]
     }else{
       status = `Next player: ${xIsNext ? 'X' : 'O'}`
     }
@@ -47,7 +49,7 @@ export default function Board({squares, xIsNext, onPlay}) {
       var [a, b, c] = lines[i];
       
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-        return squares[a];
+        return [squares[a], lines[i]];
       }
     }
     return null;
@@ -63,7 +65,7 @@ export default function Board({squares, xIsNext, onPlay}) {
             <div key={i} className="board-row">
               {row.map((square, j, arr) => {
                   let index = i === 2 ? j + 6 : i === 1 ? j + 3 : j
-                  return <Square key={index} value={square} onSquareClick={() => handleClick(index)} />
+                  return <Square winner={winnerLine && winnerLine.includes(index) ? true : false} key={index} value={square} onSquareClick={() => handleClick(index)} />
                 })
               }
             </div>

@@ -67,8 +67,6 @@ function Game() {
         setDescending(!descending)
     }
     
-    
-    console.log(movesReversed, moves)
     return (
         <div className="game">
           <div className="game-board">
