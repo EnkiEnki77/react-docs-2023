@@ -26,3 +26,11 @@
 //2. JSX requires all tags to be explicitly closed. <img/>, instead of <img>, and <li>Apple</li> instead of <li>Apple.
 
 
+
+//3. Attributes written in JSX turn into keys on the object the JSX evaluates to. So you have to camelcase attributes,
+//and not use reserved words such as class.
+
+
+
+
+
