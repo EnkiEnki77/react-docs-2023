@@ -115,3 +115,30 @@ function Profile() {
     <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
   </section>
   
+
+
+//### Nesting and organizing components.
+
+//Components can render other components, but you should never define a component inside another, this will cause bugs.
+
+//When a child component needs some data from a parent pass it as props instead of nesting.
+
+//Rule of them give each component its own file, and export them.
+
+
+
+//### Components all the way down.
+
+//Your React app starts with a root component. This is the component passed into root.render() and every other component
+//in the app is a child of this component. 
+
+//Components are used all the way down, so you dont just use them for reusable ui elements like buttons, but also things
+//you may only use once such as a sidebar, list, and ultimately complete pages.
+
+//React based frameworks take this a step further. Instead of using an empty HTML file and letting React take over,
+//managing the page with JS. They also generate the HTML automatically from your React components. Allowing your app
+//to show static content before the JS loads. 
+
+//Still, many sites only use bits of React for interactivity. You can use as much or as little React as you need in your 
+//site.
+
