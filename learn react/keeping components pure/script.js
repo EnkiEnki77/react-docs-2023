@@ -102,3 +102,5 @@ function Cup({ guest }) {
 //time to finish the outdated render. Purity makes it safe to stop calculating at any time.
 // Every new React feature we’re building takes advantage of purity. From data fetching to animations to performance, 
 //keeping components pure unlocks the power of the React paradigm.
+
+//Finish this section.
