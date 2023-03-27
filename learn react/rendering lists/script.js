@@ -124,4 +124,12 @@ function Recipe({id, name, ingredient}){
     return
 }
 
+//If you extract jsx youre mapping into a list as a component dont forget to keep the key in the map and put it on the
+//reference to the new component. This is because the key needs to stay in the context of the surrounding array. It shouldnt
+//be apart of the rendered component.
+
+//There are rare cases when index as a key is acceptable, this is only when there is no way a list will be changed.
+
+
+
 
