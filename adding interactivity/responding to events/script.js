@@ -218,5 +218,7 @@ function Button({ onClick, children }) {
 
   //If state in a parent component is unexpectedly being changed when interacting with a child its because of propagation.
 
+
+
   
 
