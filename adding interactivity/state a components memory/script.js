@@ -134,3 +134,23 @@ export default function Gallery() {
 //Read this: https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e
 
 //How useState works internally: https://codesandbox.io/s/63td7j?file=/index.js&utm_medium=sandpack
+
+
+
+//State is local to a component instance on the screen, meaning if you render a componnet twice each one will have its
+//own state.
+
+import Gallery from './Gallery.js';
+
+export default function Page() {
+  return (
+    <div className="Page">
+      <Gallery />
+      <Gallery />
+    </div>
+  );
+}
+
+//State is fully private to the component its defined in, parents cant change it. THis allows you to add or remove it
+//without effecting surrounding components.
+
