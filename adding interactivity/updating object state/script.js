@@ -364,5 +364,16 @@ let obj1 = {
   //performance or correctness pitfalls.
 
   //You can often get away with mutation of state, but it is never advised, to enable you to use new features in the future.
+
   
+
+  //If something unexpected changes, there is a mutation.
+
+  //Remember, you should never mutate state, even if the object the state references is not referenced anywhere else.
+  //Also, state mutations will not be reflected on the screen until a later unrelated state update triggers a rerender.
+
+  //React compares the reference of prev state objec/arrays to the new ones. It doesnt actually compare the values inside.
+  
+  
+
 
