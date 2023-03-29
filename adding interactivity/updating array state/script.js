@@ -122,3 +122,11 @@ setList(nextList);
 //If you have to update state more than a few levels deep you should use Immer.
 
 
+
+//If you want an action to remove an element on certain conditions pass a filtered array to the setter function.
+
+
+
+
+
+
